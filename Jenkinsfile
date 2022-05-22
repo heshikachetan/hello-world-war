@@ -14,6 +14,8 @@ pipeline {
        					 }
 				stage('Deploy') {
             				steps {
+						sh "pwd"
+						sh "ls"
                				 sh "cp hello-world-war-1.0.0.war /opt/apache/tomcat-9.0.62/webapps/"
             					}
        					 }
