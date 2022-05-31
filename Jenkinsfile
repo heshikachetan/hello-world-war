@@ -17,6 +17,8 @@ pipeline {
 					steps {
 						sh "docker login -u heshikachetan -p Chetan@1987'\$'"
 						sh "docker push heshikachetan/hello:1.0"
+					}
+				}
 				/*stage('Deploy') {
             				steps {
 						sh "pwd"
