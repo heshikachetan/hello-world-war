@@ -9,10 +9,15 @@ pipeline {
        					 }
 				stage('Build') {
             				steps {
-               				 sh "mvn clean package"
+               				 sh "cd hello-world-war"
+						sh "docker build -t heshikachetan/hello:1.0 ."
             					}
        					 }
-				stage('Deploy') {
+				stage('Publish') {
+					steps {
+						sh "docker login -u heshikachetan -p Chetan@1987'\$'"
+						sh "docker push heshikachetan/hello:1.0"
+				/*stage('Deploy') {
             				steps {
 						sh "pwd"
 						sh "ls"
@@ -20,6 +25,6 @@ pipeline {
 						echo "test"
                				 sh "cp /var/lib/jenkins/workspace/pipeline1/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.62/webapps/"
             					}
-       					 }
+       					 }*/
    				 }
 		}
