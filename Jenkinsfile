@@ -3,7 +3,7 @@ pipeline {
     			stages {
         			stage('Checkout') {
             				steps {
-					sh "rm -rf /var/lib/jenkins/workspace/pipeline1/hello-world-war"	
+					sh "rm -rf /home/slave2/workspace/pipeline1/hello-world-war"	
                				 sh "git clone https://github.com/heshikachetan/hello-world-war.git"
             					}
        					 }
